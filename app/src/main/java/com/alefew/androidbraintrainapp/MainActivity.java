@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
 
-                timerTextView.setText(String.valueOf(millisUntilFinished / 1000) + "s");
+                timerTextView.setText(millisUntilFinished / 1000 + "s");
 
             }
 
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
                 playAgainButton.setVisibility(View.VISIBLE);
                 timerTextView.setText("0s");
-                resultTextView.setText("Your score: " + Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
+                resultTextView.setText("Your score: " + score + "/" + numberOfQuestions);
 
             }
         }.start();
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         int a = rand.nextInt(21);
         int b = rand.nextInt(21);
 
-        sumTextView.setText(Integer.toString(a) + " + " + Integer.toString(b));
+        sumTextView.setText(a + " + " + b);
 
         locationOfCorrectAnswer = rand.nextInt(4);
 
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         numberOfQuestions++;
-        pointsTextView.setText(Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
+        pointsTextView.setText(score + "/" + numberOfQuestions);
         generateQuestion();
 
 
@@ -145,17 +145,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startButton = (Button)findViewById(R.id.startButton);
-        sumTextView = (TextView)findViewById(R.id.sumTextView);
-        button0 = (Button)findViewById(R.id.button0);
-        button1 = (Button)findViewById(R.id.button1);
-        button2 = (Button)findViewById(R.id.button2);
-        button3 = (Button)findViewById(R.id.button3);
-        resultTextView = (TextView)findViewById(R.id.resultTextView);
-        pointsTextView = (TextView)findViewById(R.id.pointsTextView);
-        timerTextView = (TextView)findViewById(R.id.timerTextView);
-        playAgainButton = (Button)findViewById(R.id.playAgainButton);
-        gameRelativeLayout = (RelativeLayout)findViewById(R.id.gameRelativeLayout);
+        startButton = findViewById(R.id.startButton);
+        sumTextView = findViewById(R.id.sumTextView);
+        button0 = findViewById(R.id.button0);
+        button1 =findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        resultTextView = findViewById(R.id.resultTextView);
+        pointsTextView = findViewById(R.id.pointsTextView);
+        timerTextView = findViewById(R.id.timerTextView);
+        playAgainButton = findViewById(R.id.playAgainButton);
+        gameRelativeLayout =findViewById(R.id.gameRelativeLayout);
 
 
     }
